@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 const CreateTodoField = ({ setTodos }) => {
-    const [title, setTitle] = useState('')
+    const [title, setTitle] = useState('');
 
     const addTodo = title => {
         setTodos(prev => [

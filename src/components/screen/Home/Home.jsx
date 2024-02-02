@@ -30,7 +30,13 @@ const Home = () => {
     }
     const deleteTodo = _id => setTodos(prevTodos => prevTodos.filter(t => t.id !== _id));
  
-    
+    const editTodo = (_id, newText) => {
+      setTodos((prevTodos) =>
+      prevTodos.map((todo) =>
+        todo.id === _id ? { ...todo, title: newText } : todo
+      )
+    );
+    };
 
 
     
@@ -43,6 +49,7 @@ const Home = () => {
           todo={todo} 
           changeTodo={changeTodo}
           deleteTodo={deleteTodo}
+          editTodo={editTodo}
         />
     ))}
       <CreateTodoField setTodos={setTodos} />
